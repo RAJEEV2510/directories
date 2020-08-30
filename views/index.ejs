@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+<h1>
+    WELCOME TO Online code saving website
+</h1>
+
+    <a href="/logout"> logut</a>
+      <p>
+        <%=name%>
+        <%=email%>
+    </p>
+    Upload Your File
+    <form method="POST" enctype="multipart/form-data" >
+        
+             <input type="text" placeholder="name of project" name="name">  
+        <input type="file" name='blogimage' id="pic">
+        <input type="hidden" name="userId">
+         <input type="text" placeholder="description" name="description">  
+
+        <select name="choosing" >
+            <option name="private" value="private">private</option>
+            <option name="public" value="public"> public</option>
+        </select>
+
+            <input type="submit" value='upload file' >
+    
+
+     </form>
+  
+     <form method="POST" >
+        
+          <button>Download the files</button>
+   
+    </form>
+    <%if(data){%>
+    <%data.forEach((data)=>{%>
+        DETAILS 
+        
+        <%=data.name%>
+        <%=data.description%>
+       
+
+        <a href="<%=data.filename%>" download>
+          <li >
+            <%=data.filename%>
+    
+            </li>
+        </a>
+       <a href="/delete/<%=data._id%>/<%=data.filename%>">delete</a> 
+       
+<%})%>     
+    <%}%>
+    
+    
+</body>
+</html>

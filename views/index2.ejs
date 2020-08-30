@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+<h1>
+    WELCOME TO Online code saving website
+</h1>
+
+    <a href="/logout"> logut</a>
+      <p>
+    </p>
+    <form method="POST" enctype="multipart/form-data" >
+        
+        
+
+       Upload Your File
+       <input type="file" name='blogimage' id="pic" >
+       <input type="submit" value='upload file' >
+    
+     </form>
+  
+     <form method="POST"  action='/file'  >
+        
+          <button>Download the files</button>
+   
+    </form>
+    <%data.forEach((data)=>{%>
+    <a href="<%=data.filename%>" download>
+      <li  dowload>
+        <%=data.filename%>
+
+        </li>
+    </a>
+    DETAILS 
+    <%=data.name%>
+    <%=data.description%>
+    
+
+  
+    
+
+
+<%})%>     
+
+
+</body>
+</html>
